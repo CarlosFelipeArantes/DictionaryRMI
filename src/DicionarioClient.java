@@ -4,13 +4,13 @@ import java.rmi.RemoteException;
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 
-public class CalculadoraClient {
+public class DicionarioClient {
 
 	public static void main(String[] args) {
 		String servidor = "rmi://localhost/";
 		String nome = "DictionaryService";
 		try {
-			Dictionary d = (Dictionary) Naming.lookup(servidor + nome);
+			Dicionario d = (Dicionario) Naming.lookup(servidor + nome);
 			System.out.println("Objeto remoto \'"+ nome + "\' encontrado no servidor.");
 			
 

@@ -3,11 +3,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class DictionaryServer {
+public class DicionarioServer {
 
-	public DictionaryServer() {
+	public DicionarioServer() {
 		try {
-			Dictionary d = new DictionaryServant();
+			Dicionario d = new DicionarioServant();
 			Naming.rebind("rmi://localhost/DictionaryService", d);
 		} catch (Exception e) {
 			System.out.println(e);
@@ -15,13 +15,8 @@ public class DictionaryServer {
 	}
 
 	public static void main(String args[]) {
-		new DictionaryServer();
+		new DicionarioServer();
 	}
 	
-	public static void carregarDicionario(){
-		
-		Map<String,Palavra> dicionario = new HashMap<String,Palavra>();
-		
-	}
-
+	
 }

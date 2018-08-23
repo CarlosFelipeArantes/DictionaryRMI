@@ -8,16 +8,11 @@ public class CalculadoraClient {
 
 	public static void main(String[] args) {
 		String servidor = "rmi://localhost/";
-		String nome = "CalculadoraService";
+		String nome = "DictionaryService";
 		try {
-			Calculadora c = (Calculadora) Naming.lookup(servidor + nome);
+			Dictionary d = (Dictionary) Naming.lookup(servidor + nome);
 			System.out.println("Objeto remoto \'"+ nome + "\' encontrado no servidor.");
-
-			int x = 10, y = 5;
-			System.out.println(x + " + " + y + " = " + c.somar(x, y));
-			System.out.println(x + " - " + y + " = " + c.subtrair(x, y));
-			System.out.println(x + " * " + y + " = " + c.multiplicar(x, y));
-			System.out.println(x + " / " + y + " = " + c.dividir(x, y));
+			
 
 		} catch (MalformedURLException e) {
 			System.out.println("URL \'" + servidor + nome + "\' mal formatada.");

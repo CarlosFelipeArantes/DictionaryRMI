@@ -1,4 +1,4 @@
-public class CalculadoraServant extends java.rmi.server.UnicastRemoteObject implements Calculadora {
+public class DictionaryServant extends java.rmi.server.UnicastRemoteObject implements Dictionary {
 
 	private static final long serialVersionUID = 1L;
 

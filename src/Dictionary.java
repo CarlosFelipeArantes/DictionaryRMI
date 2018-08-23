@@ -1,4 +1,4 @@
-public interface Calculadora extends java.rmi.Remote {
+public interface Dictionary extends java.rmi.Remote {
 
 	public double somar(double a, double b) throws java.rmi.RemoteException;
 

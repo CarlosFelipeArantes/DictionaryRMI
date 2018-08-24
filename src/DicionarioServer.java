@@ -9,7 +9,7 @@ public class DicionarioServer {
 		try {
 			Dicionario d = new DicionarioServant();
 			Naming.rebind("rmi://localhost/DictionaryService", d);
-		} catch (Exception e) {
+		} catch (Exception e) {//teste
 			System.out.println(e);
 		}
 	}

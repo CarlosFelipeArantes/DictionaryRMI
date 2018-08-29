@@ -1,29 +1,26 @@
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
-import java.rmi.Naming;
-import java.rmi.RemoteException;
-import java.net.MalformedURLException;
-import java.rmi.NotBoundException;
+import javax.swing.JFrame;
 
 public class DicionarioClient {
 
 	public static void main(String[] args) {
-		String servidor = "rmi://localhost/";
-		String nome = "DictionaryService";
-		try {
-			Dicionario d = (Dicionario) Naming.lookup(servidor + nome);
-			System.out.println("Objeto remoto \'"+ nome + "\' encontrado no servidor.");
-			
-
-		} catch (MalformedURLException e) {
-			System.out.println("URL \'" + servidor + nome + "\' mal formatada.");
-		} catch (RemoteException e) {
-			System.out.println("Erro na invocação remota.");
-			e.printStackTrace();
-		} catch (NotBoundException e) {
-			System.out.println("Objeto remoto \'" + nome + "\' não está disponível.");
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//	        System.setProperty("java.security.policy","/home/carlos/git/DictionaryRMI/bin/rmi.policy");
+//			Registry r = LocateRegistry.getRegistry("localhost");
+//			Dicionario d = (Dicionario) r.lookup("DictionaryService");
+//			System.out.println(d.incluirPalavra("MBS-se-", "Eh pu-ra beleza-."));
+//
+//			System.out.println(d.consultarPalavra("MBS-se-"));
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+		
+		JFrame janela = new JFrame("Meu primeiro frame em Java");
+        janela.setSize(300,200);
+        janela.setLocationRelativeTo(null);
+		janela.setVisible(true);
 	}
 }

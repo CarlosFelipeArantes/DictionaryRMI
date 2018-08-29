@@ -1,10 +1,7 @@
 public interface Dicionario extends java.rmi.Remote {
 
-	public double somar(double a, double b) throws java.rmi.RemoteException;
+	public String consultarPalavra(String x) throws java.rmi.RemoteException;
+	public boolean excluirPalavra(String x) throws java.rmi.RemoteException;
+	public boolean incluirPalavra(String palavra, String significado) throws java.rmi.RemoteException;
 
-	public double subtrair(double a, double b) throws java.rmi.RemoteException;
-
-	public double multiplicar(double a, double b) throws java.rmi.RemoteException;
-
-	public double dividir(double a, double b) throws java.rmi.RemoteException;
 }

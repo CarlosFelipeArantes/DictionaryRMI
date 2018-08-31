@@ -1,7 +1,14 @@
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-
+/**
+* Trata-se da classe servidor responsável por registrar e disponibilizar
+* o objeto Dicionario para o cliente. Sem regra de negócio alguma adicionada.
+*
+* @author  Carlos Felipe de Almeida Arantes
+* @version 2.0
+* @since   2018-08-28 
+*/
 public class DicionarioServer
 {
 	private static Registry r;

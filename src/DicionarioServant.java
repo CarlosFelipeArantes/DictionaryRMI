@@ -7,7 +7,16 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
+/**
+* Trata-se da classe que irá disponibilizar o objeto no servidor
+* para ser acessado pelo cliente. 
+* Implementa toda a regra de negócio com excessão dos erros, que
+* é tratado no cliente como resposta às operações.
+*
+* @author  Carlos Felipe de Almeida Arantes
+* @version 4.0
+* @since   2018-08-29 
+*/
 public class DicionarioServant extends java.rmi.server.UnicastRemoteObject implements Dicionario,Runnable {
 	
 	private static final long serialVersionUID = 1L;
@@ -15,7 +24,12 @@ public class DicionarioServant extends java.rmi.server.UnicastRemoteObject imple
 	private volatile boolean sinal=false;
 	private File dicionarioFile;
 
-
+	/**
+	   * Construtor do objeto a ser disponibilizado remotamente.
+	   * Obs: Cria a si mesmo como uma thread que fará de tempos 
+	   * em tempos a gravação em arquivo, um "dump" do dicionario
+	   * implementado como HashMap
+	   */
 	public DicionarioServant() throws java.rmi.RemoteException {
 		super();
 		this.dicionario = new HashMap<String,String>();
@@ -102,7 +116,10 @@ public class DicionarioServant extends java.rmi.server.UnicastRemoteObject imple
 			return false;
 		}
 	}
-
+	/**
+	 * Metódo responsável pela execução de código em thread que é executado
+	 * de 3 em 3 segundos para realizar a escrita do dicionario.
+	   */
 	@Override
 	public void run()
 	{
@@ -124,9 +141,7 @@ public class DicionarioServant extends java.rmi.server.UnicastRemoteObject imple
 														{
 														e.printStackTrace();
 														}
-													}
-											);
-					
+											});
 					writer.close();
 				} 
 				catch (Exception e)

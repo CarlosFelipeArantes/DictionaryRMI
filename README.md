@@ -9,6 +9,6 @@ Os devidos códigos, necessários para compreensão do sistema, estão com comen
 
 ## Instruções
 
-**Ambos programas, tanto servidor quanto cliente, foram implementados para não precisarem de rodar o RMI manualmente, o código já chama em si RMI do Java e configura as policies do Java.
+**Ambos programas, tanto servidor quanto cliente, foram implementados para não precisarem de rodar o RMI manualmente, o código já chama em si RMI do Java e configura as policies do Java.**
 
-**Basta rodar as respectivas classes DicionarioServer, para disponibilizar o objeto, e DicionarioClient, para acessar remotamente.
+**Basta rodar as respectivas classes DicionarioServer, para disponibilizar o objeto, e DicionarioClient, para acessar remotamente.**
